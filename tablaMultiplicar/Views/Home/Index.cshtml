@@ -1,0 +1,39 @@
+﻿
+@model List<tablaMultiplicar.Models.Tabla>
+
+
+  
+
+<form action="/Home/Index" method="post">
+    <label>Número: </label>
+    <input type="number" class="form-control col-md-2" name="numero" id="numero" value="1" min="1">
+    <button type="submit" class="btn btn-primary btn-sm">Mostrar</button>
+</form>
+<br />
+
+@if (Model != null)
+{
+
+
+    <table class="table table-responsive">
+        <thead class="thead-dark">
+            <tr style="text-align: center;">
+                <th>No.</th>
+                <th>X</th>
+                <th>Multiplicador</th>
+                
+                <th>Resultado</th>
+            </tr>
+        </thead>
+            @foreach (var row in Model)
+            {
+                <tr style="text-align: center;">
+                    <td>@row.factor</td>
+                    <td>X</td>
+                    <td>@row.indice</td>
+             
+                    <td>@row.resultado</td>
+                </tr>
+            }
+</table>
+}
